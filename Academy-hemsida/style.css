@@ -1,0 +1,357 @@
+/* 
+Använd html för stilinställningar. 
+Använd :root för att definiera globala variabler. 
+*/
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding:0;
+}
+
+:root {
+    --light-grey: #E9E9E9;
+    --dark-grey: #404040;
+
+} 
+
+html {
+    font-size: 16px;
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    padding: 1%;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav li {
+    padding: 0.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.logo > span {
+    font-weight: medium;
+    color: grey
+}
+
+.mobil-nav {
+    display: none;
+}
+
+/* @media only screen and (min-width: 400px) and (max-width: 590px) {
+    .mobil-nav {
+        display: grid;
+    }
+} */
+
+@media only screen and (min-width: 590px) and (max-width: 796px){
+    nav a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 796px) and (max-width: 830px){
+    nav a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 830px) and (max-width: 960){
+    nav a {
+        font-size: 16px;
+    }
+}
+
+
+/* HERO PAGE */
+
+.hero-container {
+    background-color: var(--lighter-grey);
+    display: flex;
+    padding: 5% 3%;
+}
+
+.hero-container button {
+    background-color: var(--dark-grey);
+    width: 100%;
+    height: 3rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-size: 100%;
+}
+
+.hero-left img{
+    width: 80%;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 1%;
+    padding: 0 2%;
+}
+
+.hero-right > h1, h4 {
+    padding: 2%;
+    color: var(--dark-grey);
+}
+
+.hero-right > h1 {
+    font-size: 2.5rem;
+}
+
+.hero-right a {
+    color: white;
+    text-decoration: none;
+}
+
+/* PRACTICE SECTION  */
+
+.practice-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    color: var(--dark-grey);
+}
+
+.practice-left {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.practice-left img {
+    width: 100%;
+}
+
+.practice-left-info {
+    padding-bottom: 2%;
+}
+
+.practice-left-info h2, p{
+   padding: 2%;
+}
+
+.practice-left-info p{
+   font-size: 80%;
+}
+
+.practice-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.practice-right img {
+    width: 8rem;
+}
+
+.practice-right h4 {
+    font-size: 140%;
+}
+
+.practice-right button {
+    background: none;
+    border: none;
+}
+
+.practice-right a {
+    text-decoration: none;
+}
+
+.orientation, .campus, .guest {
+    display: flex;
+    border: 1px solid var(--light-grey);
+    padding: 2%;
+}
+
+.orientation-info, .campus-info, .guest-info{
+    padding: 0 5%;
+    margin-top: 2%;
+    font-size: 80%;
+}
+
+.orientation-info > *,
+.campus-info > *,
+.guest-info > * {
+    padding: 2% 0;
+}
+
+.guest {
+    background-color: var(--light-grey);
+    margin: 0 0 2% 0;
+}
+
+.orientation-left-mobil, .campus-left-mobil, .guest-left-mobil {
+    display: none;
+}
+
+/* START LEARNING */
+
+.start-learning-container {
+    background-color: var(--light-grey);
+    padding: 2% 5% 8% 5%;
+}
+
+.start-learning-container > h1{
+ text-align: center;
+ color: var(--dark-grey);
+ padding: 4%;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2%;
+}
+
+.grid-wrapper img {
+    width: 100%;
+}
+
+/* START LEARNING CARDS */
+
+.grid-wrapper > * {
+    display: flex;
+    flex-direction: column;
+}
+
+.sl-info {
+    background-color: white;
+    padding: 5%;
+}
+
+.sl-info > * {
+    padding: 3% 0;
+}
+
+.sl-info > p {
+    font-size: small;
+    color: rgb(102, 102, 102);
+}
+
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.sl-mobil {
+    display: none;
+}
+
+@media only screen and (max-width: 580px){
+    /* NAVBAR  */
+    nav > .logo, nav > ul{
+        display: none;
+    }
+
+    .mobil-nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        grid-gap: 80%;
+        margin: 2% 5%;
+    }
+
+    /* HERO SECTION  */
+    .hero-container {
+        flex-direction: column;
+        padding: 0 0 5% 0;
+    }
+
+    .hero-container img {
+        width: 100%;
+    }
+
+    .hero-right button {
+        font-size: 100%;
+    }
+
+    /* PRACTICE SECTION */
+    .practice-left {
+        display: none;
+    }
+
+    .practice-container {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-right > * {
+        display: flex;
+        flex-direction: column;
+        font-size: 120%;
+    }
+
+.orientation-left-desktop, 
+.campus-left-desktop, 
+.guest-left-desktop{
+display: none;
+}
+
+.practice-right img {
+    width: 100%;
+}
+
+.orientation-left-mobil,
+.campus-left-mobil,
+.guest-left-mobil {
+    display: inline;
+}
+
+.guest{
+    background-color: white;
+}
+
+/* START LEARNING  */
+
+.start-learning-container {
+    background-color: white;
+}
+
+.grid-wrapper {
+    display: none;
+}
+
+.sl-mobil {
+    display: flex;
+    flex-direction: column;
+}
+
+.sl-mobil > * {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    height: 5rem;
+    margin: 1%;
+    text-decoration: none;
+
+}
+
+.sl-mobil h1 {
+    padding: 5%;
+}
+
+}
